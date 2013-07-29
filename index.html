@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=7, IE=9, IE=10">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
+    <title>Add Webmap</title>
+    <link rel="stylesheet" href="http://serverapi.arcgisonline.com/jsapi/arcgis/3.5/js/dojo/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" href="http://serverapi.arcgisonline.com/jsapi/arcgis/3.5/js/esri/css/esri.css">
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
+    <style>
+      html, body, #map {
+        height:100%;
+        width:100%;
+        margin:0;
+        padding:0;
+      }
+      body {
+        background-color:#FFF;
+        overflow:hidden;
+        font-family:"Trebuchet MS";
+      }
+    </style>
+  </head>
+
+  <body class="claro">
+    <div id="map">
+        <div class="input-append">
+          <input class="search-keyword" type="text" value="demographics" placeholder="Find Webmaps...">
+          <button type="button"
+                  class="search-btn btn"
+                  data-toggle="modal"
+                  data-target="#addWebmapModal">
+                  <i class="icon-search"></i>
+          </button>
+        </div>
+
+    </div>
+
+    <!-- Modal -->
+    <div id="addWebmapModal" class="modal hide fade" tabindex="-1" role="dialog">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Choose a Webmap</h3>
+      </div>
+      <div class="modal-body">
+        <div class="results-form">
+          <table class="table table-condensed table-striped">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Link</th>
+                <th>Name</th>
+                <th>Add to Map</th>
+              </tr>
+            </thead>
+            <tbody class="add-row-here">
+              <!-- Placeholder for dynamically added results -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+    <script src="http://serverapi.arcgisonline.com/jsapi/arcgis/3.5/"></script>
+    <script>
+      // Change this path depending on your server environment (IIS should use proxy.ashx, Apache should use proxy.php)
+      esri.config.defaults.io.proxyUrl = "proxy/proxy.php";
+      </script>
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>
