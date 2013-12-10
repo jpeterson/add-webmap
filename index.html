@@ -72,7 +72,8 @@
 
     <script src="http://serverapi.arcgisonline.com/jsapi/arcgis/3.5/"></script>
     <script>
-      // Change this path depending on your server environment (IIS should use proxy.ashx, Apache should use proxy.php)
+      // Change this path depending on your application server environment 
+      // IIS should use proxy.ashx, PHP should use proxy.php, Tomcat should be proxy.jsp
       esri.config.defaults.io.proxyUrl = "proxy/proxy.php";
       </script>
     <script type="text/javascript" src="js/main.js"></script>
